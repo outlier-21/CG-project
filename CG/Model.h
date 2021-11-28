@@ -47,6 +47,12 @@ public:
             meshes[i].Draw();
     }
 
+    void Draw(Shader& shader)
+    {
+        for (unsigned int i = 0; i < meshes.size(); i++)
+            meshes[i].Draw(shader);
+    }
+
     void registerShaders(std::vector<Shader> shaders) {
         for (unsigned int i = 0; i < shaders.size(); i++) {
             meshes[i].registerShader(shaders[i]);
